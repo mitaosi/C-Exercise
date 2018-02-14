@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
 
-    unsigned char outByte = 0x00;
+    unsigned int outByte = 0x00;
 
     if (argc != 6) {
         printf("Wrong number of input arguments\n");
