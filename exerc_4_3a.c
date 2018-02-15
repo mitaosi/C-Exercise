@@ -1,3 +1,18 @@
+/* ====================================
+
+File name: exerc_4_3a.c
+Date: 2018-02-15
+
+Group Number:  #07
+
+Members of students contributed:
+
+Shengzhi Qiu
+
+Demonstration code: [<Examen code> <24373>]       Note that this is  Important , No code no bonus  !
+
+====================================== */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,11 +22,11 @@ void printport(int inport, unsigned char *outport){
   unsigned char bit4,bit7;
 
 
-  bit4 = (inport & 0x08) ? 1:0; /* 判断第4位是0还是1 */
-  if (bit4) { /* 第4位是1 */
-    bit7 = (*outport & 0x80) ? 1 : 0; /* 取得之前outport的第7位 */
-    *outport <<= 1; /* 左移1位 */
-    *outport |= bit7; /* 将第7位的值保存到第1位 */
+  bit4 = (inport & 0x08) ? 1:0; /* to judge it being 0 or 1 on bit4 */
+  if (bit4) { /* if bit 4 is 1 */
+    bit7 = (*outport & 0x80) ? 1 : 0; /* get the the bit7 from the last outport*/
+    *outport <<= 1; /* left shift 1 bit */
+    *outport |= bit7; /* store the bit7 to the bit1*/
   }
 
   rest = *outport;
@@ -27,7 +42,7 @@ void printport(int inport, unsigned char *outport){
   // Print bits and at the end corresponding decimal value
   for(j =i-1 ;j > -1;j--)
     printf("  %d",binchar[j]);
-  printf(" --------Porten value = %d  \n", *outport);
+  printf(" -------- Port value %d  \n", *outport);
 }
 
 
@@ -51,7 +66,7 @@ unsigned char random_inport( void){
 
 int main() {
   unsigned char inport;
-  unsigned char outport = 3; /* outport 的初始值是3 */
+  unsigned char outport = 3; /* the initial value of outport is 3 */
 
   srand(time(0));
 
@@ -59,7 +74,7 @@ int main() {
 
   while (1) {
     f_delay(5);
-    inport = random_inport(); /* 随机获得inport的值 */
+    inport = random_inport(); /* get the value of inport randomly */
     printport(inport,&outport);
   }
 

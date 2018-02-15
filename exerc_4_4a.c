@@ -1,24 +1,21 @@
+/* ====================================
+
+File name: exerc_4_4a.c
+Date: 2018-02-15
+
+Group Number:  #07
+
+Members of students contributed:
+
+Shengzhi Qiu
+
+Demonstration code: [<Examen code> <24916>]       Note that this is  Important , No code no bonus  !
+
+====================================== */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-void printport(int portvalue){
-  int binchar[8], rest,j, i=0;
-  rest = portvalue;
-  while(rest!=0){
-    binchar[i++]= rest % 2;
-    rest = rest / 2;
-  }
-  // Fill to 8 bits
-  while( i<8){
-    binchar[i++]=0;
-  }
-  // Print bits and at the end corresponding decimal value
-  for(j =i-1 ;j > -1;j--)
-    printf("  %d",binchar[j]);
-  printf(" --------Porten value = %d  \n", portvalue);
-}
-
 
 void f_delay( int tenth_sec){
 
@@ -47,12 +44,12 @@ int main() {
 
   while (1) {
     inport = random_inport();
-    bit7 = (inport & 0x80) ? 1 : 0; /* 判断第7位是0还是1 */
+    bit7 = (inport & 0x80) ? 1 : 0; /* to judge bit7 being 0 or 1 */
     if (!bit7) {
-      val = inport & 0x0f; /* 有按键按下,获取低4位 */
-      printf("%X\n",val); /* 打印低4位 */
+      val = inport & 0x0f; /* when pressed, get the lower 4 bits*/
+      printf("%X\n",val); /* print out the lower 4 bits*/
     }
-    f_delay(5); /* 延迟0.5秒 */
+    f_delay(5); /* delay 0.5 sec */
   }
   return 0;
 }
