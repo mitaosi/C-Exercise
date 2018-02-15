@@ -1,3 +1,22 @@
+/* ====================================
+
+File name: exerc_x_y.c (or cpp)
+Date: 2018-mm-dd
+
+Group Number:  #nr
+
+Members of students contributed:
+
+Name 1
+
+Name 2
+
+Name 3
+
+Demonstration code: [<Examen code> <21690>]       Note that this is  Important , No code no bonus  !
+
+====================================== */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
