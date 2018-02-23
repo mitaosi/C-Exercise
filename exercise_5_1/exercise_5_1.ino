@@ -68,23 +68,23 @@ void ledSegments(byte number){
 }
 
 void loop(){
-  int temp = (analogRead(A0)*500.0)/1023;
-  if(temp > maxTemp) 
-    maxTemp = temp;
+  	int temp = (analogRead(A0)*500.0)/1023;
+  	if(temp > maxTemp) 
+    	maxTemp = temp;
 
-  Serial.print("Temp:");
-  Serial.println(temp);
-  Serial.print("Max:");
-  Serial.println(maxTemp);
-  Serial.println(digitalRead(10));
-  unsigned long startTime = millis();
+  	Serial.print("Temp:");
+  	Serial.println(temp);
+  	Serial.print("Max:");
+  	Serial.println(maxTemp);
+  	Serial.println(digitalRead(10));
+  	unsigned long startTime = millis();
 	
 	if(digitalRead(10)==0){
-		for (unsigned long elapsed = 0; elapsed < 600; elapsed = millis() - startTime ){
-			ledDigit1(numbers[(temp%100)/10]);
-			delay(5);
-			ledDigit2(numbers[temp%10]);
-			delay(5);
+	for (unsigned long elapsed = 0; elapsed < 600; elapsed = millis() - startTime ){
+		ledDigit1(numbers[(temp%100)/10]);
+		delay(5);
+		ledDigit2(numbers[temp%10]);
+		delay(5);
 		}	
 	}
 	
