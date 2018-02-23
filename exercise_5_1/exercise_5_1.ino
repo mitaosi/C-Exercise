@@ -23,9 +23,6 @@ Demonstration code: 44466
 // Pins for A B C D E F G
 const int segs[7] = {A,B,C,D,E,F,G};
 // Segments for each number
-//const byte numbers[10] = {0b11110111, 0b1100000, 0b1011011, 0b1111010, 0b1101100, 
-//0b0111110, 0b0111111, 0b1110000, 0b1111111, 0b1111100};
-
 const byte numbers[10] = {0b00111111, 0b0000110, 0b01011011, 0b1001111, 0b1100110, 0b1101101,
 0b1111101, 0b0000111, 0b1111111, 0b1101111 };
 
@@ -44,7 +41,7 @@ void setup(){
 	pinMode(CA2, OUTPUT);
 	
 	pinMode(A0, INPUT); // Configuring pin A0 as input
-	pinMode( 10, INPUT); // digitalWrite(4,HIGH) for 2 bits dip switch
+	pinMode( 10, INPUT); // digitalWrite(10,HIGH) for 2 bits dip switch
 	Serial.begin(9600);	
 }
 
