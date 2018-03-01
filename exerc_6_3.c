@@ -1,6 +1,6 @@
 /* ====================================
 
-File name: Exerc_6_3.c 
+File name: exerc_6_3.c 
 
 Date: 2018-03-01
 
@@ -18,10 +18,11 @@ Demonstration code:
 
 #include <stdio.h>
 
-#define ML13_statCtrl 0xB00
-#define read_control *((char *)ML13_statCtrl)
-#define set_control(x) *((char *)ML13_statCtrl)=x
-int main(){
+#define ML13_Status   0xB00
+#define ML13_Control  0xB00
+#define read_control *((char *)ML13_Status)
+#define set_control(x) *((char *)ML13_Control)=x
+void main(){
 	
 	while(1){
 		if( read_control & 0x1 ||  read_control & 0x2){
@@ -35,6 +36,5 @@ int main(){
 		}
 	}
 
-return 0;
 }
 
