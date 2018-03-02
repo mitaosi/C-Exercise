@@ -45,7 +45,7 @@ PROCESS door_opened_check(void);
 void AtInterrupt (void);
 
 
-int main(){
+void main(){
 	isLocked=0;
 	InitKernel(TIMESLICE, AtInterrupt);
 	
@@ -73,8 +73,6 @@ int main(){
         StartKernelForSim();
 
 
-
-return 0;
 }
 
 
