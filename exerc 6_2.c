@@ -48,7 +48,8 @@ void *thread1(){
 			}
 		}
 	}
-	printf("This is the thread for sorting array.\n");
+	//the function that prints the array is in the search function, so this line will print first.
+	printf("This is the thread for sorting array.\n");  
 	pthread_exit(NULL);
 }
 
@@ -92,6 +93,7 @@ int main() {
 	srand((unsigned) time(&t));
 	pthread_attr_init(&attr);
 
+	// create each thread and pause them
 	pthread_create(&tid, &attr, runner, NULL);
 	pthread_join(tid, NULL);
 	
