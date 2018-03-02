@@ -1,0 +1,20 @@
+1. How many threads (in total) are created during the execution of the program?
+Answer: 2 threads
+
+2. What are lines 16,17,20, 22 and 26 intended for?
+Answer: "pthread_t tid"			 the thread identifier
+	"pthread_attr_t attr"		 set of thread attributes
+	"pthread_attr_init(&attr)"	 get the default attributes
+	"printf("Enter max value\n")"	 do i even have to explain about this?
+	"pthread_join(tid,NULL)"	 block and wait for the thread to exit
+
+3. How many parameters are passed to function runner?
+Answer: 4
+
+4. How can function runner know the values for parameters that, such as max value, not are
+passed to it?
+Answer: 
+
+5. Test how the behavior of the program change if line 26 is omitted. Explain why.
+Answer: that will causes deadlock since pthread_join will block this thread and make it exclusive to prevent other process.
+	when create a thread, its attribute will define if it is joinable or detached.
