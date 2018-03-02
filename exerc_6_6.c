@@ -30,7 +30,7 @@ PROCESS P4(void);
 void AtInterrupt(void);
 extern void _outchar(char);
 
-int main(){
+void main(){
 	InitKernel(TIMESLICE, AtInterrupt);
 	initsem(sem1,1);
 	initsem(sem2,0);
@@ -51,7 +51,6 @@ int main(){
          }
 	
         StartKernelForSim();
-return 0;
 }
 void AtInterrupt(){
 	insert_last(Running, &ReadyQ); 
